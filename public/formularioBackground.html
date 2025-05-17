@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário Background</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulario Background</h1>
+
+      <form class="form-grid" id="form-background">
+        <div class="form-row">
+          <label for="nome-bg">Nome do Background</label>
+          <input type="text" id="nome-bg" name="nome" required/>
+          <label>Upload Skin Background</label>
+          <input
+            type="file"
+            id="sprite-bg"
+            name="sprite_bg"
+            accept="image/png,image/jpeg"
+          />
+          <img
+            id="preview-bg"
+            src=""
+            alt="Prévia Background"
+            style="
+              display: none;
+              width: 100px;
+              height: 100px;
+              object-fit: contain;
+              margin-top: 10px;
+            "
+          />
+        </div>
+
+        <div class="button-row">
+          <a href="index.html" class="cancelar-button-link">
+            <button type="button" class="cancel-button">Cancelar</button>
+          </a>
+          <button type="submit" class="add-button">Adicionar</button>
+        </div>
+      </form>
+      <script type="module" src="formularioBgs.js"></script>
+    </div>
+  </body>
+</html>

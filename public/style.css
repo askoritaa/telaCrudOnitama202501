@@ -142,3 +142,17 @@ input[type="text"] {
   border-radius: 20px;
   cursor: pointer;
 }
+
+#skins-table img {
+  object-fit: contain;
+}
+#skins-table th:nth-child(4), #skins-table th:nth-child(5),
+#skins-table td:nth-child(4), #skins-table td:nth-child(5) {
+  text-align: center;
+}
+
+#preview-pawn, #preview-king {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}

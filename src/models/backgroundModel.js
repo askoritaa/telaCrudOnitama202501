@@ -42,7 +42,7 @@ class BackgroundModel {
     }
 
   list() {
-    const sql = "SELECT * FROM backgrounds WHERE active = true ORDER BY created_at DESC";
+    const sql = "SELECT * FROM backgrounds WHERE active = true ORDER BY created_at DESC ";
     return this.executeQuery(sql);    
   }
 

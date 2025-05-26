@@ -33,3 +33,20 @@ export function renderBackgrounds(data, tBody) {
         tBody.appendChild(row);
   });
 }
+
+export function renderEmojis(data, tBody) {
+  tBody.innerHTML = "";
+  data.forEach((item) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${item.id_Emoji}</td>
+        <td>${item.nome}</td>
+        <td><img src="${item.caminho_imagem}" alt="EmojiImage" class="imgEmj"></td>
+        <td>
+          <button class="alter-button">Alterar</button>
+          <button class="delete-button">Excluir</button>
+        </td>
+        `;
+        tBody.appendChild(row);
+  });
+}

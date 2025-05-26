@@ -12,5 +12,12 @@ export const types = {
         title: "Backgrounds",
         columns: ["Id", "Nome do Background", "Prévia", "Ação"],
         render: "renderBackgrounds",
+    },
+    emojis: {
+        apiPath: "/emojis",
+        singlePath: "/emoji",
+        title: "Emojis",
+        columns: ["Id", "Nome do Emojis", "Prévia imagem", "Ação"],
+        render: "renderEmojis",
     }
 }

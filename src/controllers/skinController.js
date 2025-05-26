@@ -36,13 +36,13 @@ class SkinController {
       const skin = await skinModel.getById(id);
       console.log(
         `getPawnImage(${id}): skin exists: ${!!skin}, caminho_pawn: ${
-          skin?.caminho_pawn
+          skin?.caminho_Pawn
         }`
       );
       if (!skin || !skin.caminho_Pawn) {
         return res.status(404).json({ error: "Imagem não encontrada" });
       }
-      res.redirect(skin.caminho_pawn);
+      res.redirect(skin.caminho_Pawn);
     } catch (error) {
       console.log(`getPawnImage(${id}) error:`, error.message);
       res.status(400).json({ error: error.message });
@@ -58,13 +58,13 @@ class SkinController {
       const skin = await skinModel.getById(id);
       console.log(
         `getKingImage(${id}): skin exists: ${!!skin}, caminho_king: ${
-          skin?.caminho_king
+          skin?.caminho_King
         }`
       );
       if (!skin || !skin.caminho_King) {
         return res.status(404).json({ error: "Imagem não encontrada" });
       }
-      res.redirect(skin.caminho_king);
+      res.redirect(skin.caminho_King);
     } catch (error) {
       console.log(`getKingImage(${id}) error:`, error.message);
       res.status(400).json({ error: error.message });

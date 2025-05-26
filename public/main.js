@@ -1,8 +1,8 @@
 import { types } from "./config.js";
 import { loadItems, deleteItem } from "./api.js";
-import { renderPecas, renderBackgrounds } from "./render/renderItems.js";
+import { renderPecas, renderBackgrounds, renderEmojis } from "./render/renderItems.js";
 
-const render = { renderPecas, renderBackgrounds };
+const render = { renderPecas, renderBackgrounds, renderEmojis };
 
 document.addEventListener("DOMContentLoaded", async function () {
   const select = document.getElementById("component-select");
@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", async function () {
           window.location.href = `formularioPecasEditar.html?id=${id}`;
         } else if (componentKey === "backgrounds") {
           window.location.href = `formularioBackgroundEditar.html?id=${id}`;
+        } else if (componentKey === "emojis") {
+          window.location.href = `formularioEmojiEditar.html?id=${id}`;
         }
       });
     });
@@ -69,6 +71,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       window.location.href = "formularioPecas.html";
     } else if (key === "backgrounds") {
       window.location.href = "formularioBackground.html";
+    } else if (key === "emojis"){
+      window.location.href = "formularioEmoji.html";
     } else {
       alert("Selecione um componente válido.");
     }

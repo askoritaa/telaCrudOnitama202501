@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário Emojis</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulario Emojis</h1>
+
+      <form class="form-main" id="form-emojis" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-row">
+            <label for="emoji">Nome do emoji</label>
+            <input type="text" id="emoji" name="nome_emoji" required />
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="sprite-emoji">Upload Imagem do Emoji (PNG)</label>
+            <input
+              type="file"
+              id="sprite-emoji"
+              name="sprite_emoji"
+              accept="image/png"
+              required
+            />
+            <div class="form-row">
+              <img
+                id="preview-emoji"
+                src=""
+                alt="Prévia Emoji"
+                style="
+                  display: none;
+                  width: 100px;
+                  height: 100px;
+                  object-fit: contain;
+                  margin-top: 10px;
+                "
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="audio-emoji">Upload Audio do Emoji (audio curto mp3)</label>
+            <input
+              type="file"
+              id="audio-emoji"
+              name="audio_emoji"
+              accept=".mp3,audio/mpeg"
+              required
+            />
+
+            <div class="form-row">              
+              <audio id="preview-audio" controls style="display:none;"></audio>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <a href="index.html" class="cancelar-button-link">
+            <button type="button" class="cancel-button">Cancelar</button>
+          </a>
+          <button type="submit" class="add-button">Adicionar</button>
+        </div>
+      </form>
+      <script type="module" src="formularioEmoji.js"></script>
+    </div>
+  </body>
+</html>

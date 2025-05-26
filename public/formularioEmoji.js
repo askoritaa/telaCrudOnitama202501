@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const inputs = {
     nome: document.getElementById("emoji"),
+    preco: document.getElementById("preco"),
     emojiInput: document.getElementById("sprite-emoji"),
     audioInput: document.getElementById("audio-emoji"),
     previewEmoji: document.getElementById("preview-emoji"),
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const data = await res.json();
 
       inputs.nome.value = data.nome;
+      inputs.preco.value = data.preco;
       inputs.previewEmoji.src = data.caminho_imagem;
       inputs.previewAudio.src = data.caminho_audio;
       inputs.previewEmoji.style.display = "block";

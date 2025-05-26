@@ -41,6 +41,7 @@ export function renderEmojis(data, tBody) {
     row.innerHTML = `
         <td>${item.id_Emoji}</td>
         <td>${item.nome}</td>
+        <td>${item.preco}</td>
         <td><img src="${item.caminho_imagem}" alt="EmojiImage" class="imgEmj"></td>
         <td>
           <button class="alter-button">Alterar</button>

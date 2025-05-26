@@ -17,7 +17,7 @@ export const types = {
         apiPath: "/emojis",
         singlePath: "/emoji",
         title: "Emojis",
-        columns: ["Id", "Nome do Emojis", "Prévia imagem", "Ação"],
+        columns: ["Id", "Nome do Emojis", "Preço", "Prévia imagem", "Ação"],
         render: "renderEmojis",
     }
 }

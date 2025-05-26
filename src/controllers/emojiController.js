@@ -77,6 +77,7 @@ class EmojiController {
         throw new Error("Arquivos sprite_emoji e audio_emoji são obrigatórios");
       }
       const nome = req.body.nome_emoji;
+      const preco = req.body.preco;
       const imageFile = req.files.sprite_emoji[0];
       const audioFile = req.files.audio_emoji[0];
 
@@ -101,6 +102,7 @@ class EmojiController {
 
       const emoji = {
         nome,
+        preco,
         caminho_imagem,
         caminho_audio,
       };
@@ -126,6 +128,7 @@ class EmojiController {
       }
 
       const nome = req.body.nome_emoji;
+      const preco = req.body.preco;
       let caminho_imagem = currentEmoji.caminho_imagem;
       let caminho_audio = currentEmoji.caminho_audio;
 
@@ -153,6 +156,7 @@ class EmojiController {
 
       const emoji = {
         nome,
+        preco,
         caminho_imagem,
         caminho_audio,
       };

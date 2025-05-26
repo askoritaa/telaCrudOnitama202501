@@ -8,15 +8,16 @@ body {
 
 .container {
   background-color: #d3d3d3;
-  width: 95%;
-  max-width: 90%;
-  margin: 20px auto;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
   padding: 30px;
   border-radius: 10px;
   position: relative;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: #000;
 }
@@ -42,10 +43,6 @@ h1, h2 {
   margin: 30px 0;
 }
 
-.top-bar label, select{
-  font-size: 200%;
-}
-
 select {
   padding: 10px;
   border-radius: 5px;
@@ -57,7 +54,7 @@ select {
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 200%;
+  font-size: 20px;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -70,26 +67,30 @@ select {
   text-decoration: none;
 }
 
-
 table {
   width: 100%;
   border-spacing: 0 10px;
 }
 
-th, td {
+th,
+td {
   text-align: center;
   padding: 10px;
-  font-size: 175%;
 }
 
-td img{
+td img {
   width: 220px;
   height: 220px;
 }
 
-.imgPeca{
-  width: 150px;
-  height: 150px;
+.imgPeca {
+  width: 50px;
+  height: 50px;
+}
+
+.imgBg {
+  width: 90px;
+  height: 60px;
 }
 
 .image-placeholder {
@@ -100,15 +101,16 @@ td img{
   display: inline-block;
 }
 
-.alter-button, .delete-button {
-  padding: 6px 12px;
+.alter-button,
+.delete-button {
+  padding: 6px 7px;
   border: none;
   border-radius: 20px;
   margin: 5px 5px;
   color: white;
   cursor: pointer;
-  width: 100%;
-  font-size: 120%;
+  width: 85px;
+  font-size: 15px;
 }
 
 .alter-button {
@@ -119,12 +121,27 @@ td img{
   background-color: #900;
 }
 
-.form-grid {
+input[type="file"]::-webkit-file-upload-button {
+  visibility: visible;
+}
+
+input[type="file"] {
+  color: transparent;
+}
+
+.form-main {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 30px;
-  font-size: 150%;
+  margin: 60px;
+}
+
+.form-grid {
+  padding-top: 30px;
+}
+
+.form-bg {
+  padding-right: 30px;
 }
 
 .form-row {
@@ -132,6 +149,12 @@ td img{
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.form-input {
+  width: 130px;
 }
 
 label {
@@ -139,7 +162,6 @@ label {
 }
 
 input[type="text"] {
-  flex: 1;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -148,7 +170,7 @@ input[type="text"] {
 .button-row {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .cancel-button {
@@ -156,7 +178,7 @@ input[type="text"] {
   color: white;
   border: none;
   padding: 10px 30px;
-  font-size: 200%;
+  font-size: 20px;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -164,12 +186,15 @@ input[type="text"] {
 #skins-table img {
   object-fit: contain;
 }
-#skins-table th:nth-child(4), #skins-table th:nth-child(5),
-#skins-table td:nth-child(4), #skins-table td:nth-child(5) {
+#skins-table th:nth-child(4),
+#skins-table th:nth-child(5),
+#skins-table td:nth-child(4),
+#skins-table td:nth-child(5) {
   text-align: center;
 }
 
-#preview-pawn, #preview-king {
+#preview-pawn,
+#preview-king {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;

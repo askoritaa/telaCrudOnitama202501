@@ -24,7 +24,7 @@ export function renderBackgrounds(data, tBody) {
     row.innerHTML = `
         <td>${item.id_Background}</td>
         <td>${item.nome}</td>
-        <td><img src="${item.caminho}" alt="Background"></td>
+        <td><img src="${item.caminho}" alt="Background" class="imgBg"></td>
         <td>
           <button class="alter-button">Alterar</button>
           <button class="delete-button">Excluir</button>

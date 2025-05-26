@@ -1,46 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Formulário Peças</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Formulario Peças</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário Peças</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulario Peças</h1>
 
-    <form class="form-grid" id="form-pecas" enctype="multipart/form-data">
-      <div class="form-row">
-        <label for="conjunto">Nome do conjunto</label>
-        <input type="text" id="conjunto" name="nome_conjunto" required />
-      </div>
+      <form class="form-main" id="form-pecas" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-row">
+            <label for="conjunto">Nome do conjunto</label>
+            <input type="text" id="conjunto" name="nome_conjunto" required />
+          </div>
 
-      <div class="form-row">
-        <label for="preco">Preço no jogo</label>
-        <input type="number" id="preco" name="preco" min="0" step="1" required />
-      </div>
+          <div class="form-row">
+            <label for="preco">Preço no jogo</label>
+            <input
+              type="number"
+              id="preco"
+              name="preco"
+              min="0"
+              step="1"
+              required
+            />
+          </div>
+        </div>
 
-      <div class="form-row">
-        <label for="sprite-king">Upload Skin Rei (PNG/JPG)</label>
-        <input type="file" id="sprite-king" name="sprite_king" accept="image/png,image/jpeg" required />
-        <img id="preview-king" src="" alt="Prévia Skin Rei" style="display: none; width: 100px; height: 100px; object-fit: contain; margin-top: 10px;" />
-      </div>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="sprite-king">Upload Skin Rei (PNG, tamanho 100x100px)</label>
+            <input
+              type="file"
+              id="sprite-king"
+              name="sprite_king"
+              accept="image/png"
+              required
+            />
+            <div class="form-row">
+              <img
+                id="preview-king"
+                src=""
+                alt="Prévia Skin Rei"
+                style="
+                  display: none;
+                  width: 100px;
+                  height: 100px;
+                  object-fit: contain;
+                  margin-top: 10px;
+                "
+              />
+            </div>
+          </div>
+        </div>
 
-      <div class="form-row">
-        <label for="sprite-pawn">Upload Skin Peão (PNG/JPG)</label>
-        <input type="file" id="sprite-pawn" name="sprite_pawn" accept="image/png,image/jpeg" required />
-        <img id="preview-pawn" src="" alt="Prévia Skin Peão" style="display: none; width: 100px; height: 100px; object-fit: contain; margin-top: 10px;" />
-      </div>            
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="sprite-pawn">Upload Skin Peão (PNG, tamanho 100x100px)</label>
+            <input
+              type="file"
+              id="sprite-pawn"
+              name="sprite_pawn"
+              accept="image/png"
+              required
+            />
 
-      <div class="button-row">
-        <a href="index.html" class="cancelar-button-link">
-          <button type="button" class="cancel-button">Cancelar</button>
-        </a>
-        <button type="submit" class="add-button">Adicionar</button>
-      </div>
-    </form>
-    <script type="module" src="formularioPecas.js"></script>
-  </div>
-</body>
+            <div class="form-row">
+              <img
+                id="preview-pawn"
+                src=""
+                alt="Prévia Skin Peão"
+                style="
+                  display: none;
+                  width: 100px;
+                  height: 100px;
+                  object-fit: contain;
+                  margin-top: 10px;
+                "
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <a href="index.html" class="cancelar-button-link">
+            <button type="button" class="cancel-button">Cancelar</button>
+          </a>
+          <button type="submit" class="add-button">Adicionar</button>
+        </div>
+      </form>
+      <script type="module" src="formularioPecas.js"></script>
+    </div>
+  </body>
 </html>

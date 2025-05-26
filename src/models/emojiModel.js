@@ -45,7 +45,7 @@ class EmojiModel {
     }
 
   list() {
-    const sql = "SELECT * FROM emojis WHERE active = true";
+    const sql = "SELECT * FROM emojis WHERE active = true ORDER BY created_at DESC";
     return this.executeQuery(sql);    
   }
 

@@ -49,7 +49,7 @@ class SkinModel {
     }
 
   list() {
-    const sql = "SELECT * FROM conjuntos_skins WHERE active = true";
+    const sql = "SELECT * FROM conjuntos_skins WHERE active = true ORDER BY created_at DESC";
     return this.executeQuery(sql);    
   }
 

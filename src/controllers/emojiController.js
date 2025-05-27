@@ -4,11 +4,21 @@ const storage = require("../infra/firebaseStorage");
 const fs = require("fs").promises;
 
 class EmojiController {
-  search(req, res) {
-    const listEmojis = emojiModel.list();
-    return listEmojis
-      .then((emojis) => res.status(200).json(emojis))
-      .catch((error) => res.status(400).json(error.message));
+  async search(req, res) {
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
+    const offset = (page - 1) * limit;
+    const listEmojis = emojiModel.list(limit, offset);
+    try {
+      const total = await emojiModel.countAll();
+      const emojis = await listEmojis;
+      return res
+        .status(200)
+        .json({ emojis: emojis, total: total[0].total_rows });
+    } catch (error) {
+      console.log("error = " + error);
+      return res.status(400).json(error.message);
+    }
   }
 
   getEmojiById(req, res) {

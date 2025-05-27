@@ -5,6 +5,7 @@ export const types = {
         title: "Peças",
         columns: ["Id", "Nome do Conjunto", "Preço", "Skin Peão", "Skin Rei", "Ação"],
         render: "renderPecas",
+        dataKey: "skins",
     },
     backgrounds: {
         apiPath: "/backgrounds",
@@ -12,6 +13,7 @@ export const types = {
         title: "Backgrounds",
         columns: ["Id", "Nome do Background", "Prévia", "Ação"],
         render: "renderBackgrounds",
+        dataKey: "backgrounds",
     },
     emojis: {
         apiPath: "/emojis",
@@ -19,5 +21,6 @@ export const types = {
         title: "Emojis",
         columns: ["Id", "Nome do Emojis", "Preço", "Prévia imagem", "Ação"],
         render: "renderEmojis",
+        dataKey: "emojis",
     }
 }

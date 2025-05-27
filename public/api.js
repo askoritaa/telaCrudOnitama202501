@@ -1,9 +1,10 @@
-export async function loadItems(path) {
-  const res = await fetch(path);
+export async function loadItems(path, page, limit, dataKey) {
+  const res = await fetch(`${path}?page=${page}&limit=${limit}`);
   if (!res.ok) {
     throw new Error("Erro ao carregar os dados");
   }
-  return await res.json();
+  const result = await res.json();
+  return { data: result[dataKey], total: result.total };
 }
 
 export async function deleteItem(path, id) {

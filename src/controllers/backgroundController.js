@@ -4,11 +4,20 @@ const storage = require("../infra/firebaseStorage");
 const fs = require("fs").promises;
 
 class BackgroundController {
-  search(req, res) {
-    const listBackgrounds = backgroundModel.list();
-    return listBackgrounds
-      .then((bgs) => res.status(200).json(bgs))
-      .catch((error) => res.status(400).json(error.message));
+  async search(req, res) {
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
+    const offset = (page - 1) * limit;
+    const listBackgrounds = backgroundModel.list(limit, offset);
+    try {
+      const total = await backgroundModel.countAll();
+      const bgs = await listBackgrounds;
+      return res.status(200).json({ backgrounds: bgs, total: total[0].total_rows });
+    } catch (error) {
+      console.log("error = " + error);
+
+      return res.status(400).json(error.message);
+    }
   }
 
   getBackgroundById(req, res) {

@@ -41,9 +41,14 @@ class BackgroundModel {
         })
     }
 
-  list() {
-    const sql = "SELECT * FROM backgrounds WHERE active = true ORDER BY created_at DESC ";
-    return this.executeQuery(sql);    
+  list(limit, offset) {
+    const sql = "SELECT * FROM backgrounds WHERE active = true ORDER BY created_at DESC LIMIT ? OFFSET ?";
+    return this.executeQuery(sql, [limit, offset]);    
+  }
+
+  countAll() {
+    const sql = "SELECT COUNT(*) AS total_rows FROM backgrounds WHERE active = true;";
+    return this.executeQuery(sql);
   }
 
   getById(id) {

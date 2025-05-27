@@ -4,11 +4,18 @@ const storage = require("../infra/firebaseStorage");
 const fs = require("fs").promises;
 
 class SkinController {
-  search(req, res) {
-    const listSkins = skinModel.list();
-    return listSkins
-      .then((skins) => res.status(200).json(skins))
-      .catch((error) => res.status(400).json(error.message));
+  async search(req, res) {
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
+    const offset = (page - 1) * limit;
+    const listSkins = skinModel.list(limit, offset);
+    try {
+      const total = await skinModel.countAll();
+      const skins = await listSkins;
+      return res.status(200).json({ skins: skins, total: total[0].total_rows });
+    } catch (error) {
+      return res.status(400).json(error.message);
+    }
   }
 
   getSkinById(req, res) {
